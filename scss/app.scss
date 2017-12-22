@@ -1,0 +1,546 @@
+@charset 'utf-8';
+
+@import 'settings';
+@import 'foundation';
+@import 'motion-ui';
+
+@include foundation-global-styles;
+//@include foundation-grid;
+// @include foundation-flex-grid;
+@include foundation-xy-grid-classes;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-forms;
+// @include foundation-range-input;
+@include foundation-accordion;
+@include foundation-accordion-menu;
+@include foundation-badge;
+@include foundation-breadcrumbs;
+@include foundation-button-group;
+@include foundation-callout;
+@include foundation-card;
+@include foundation-close-button;
+@include foundation-menu;
+@include foundation-menu-icon;
+@include foundation-drilldown-menu;
+@include foundation-dropdown;
+@include foundation-dropdown-menu;
+@include foundation-responsive-embed;
+@include foundation-label;
+@include foundation-media-object;
+@include foundation-off-canvas;
+@include foundation-orbit;
+@include foundation-pagination;
+@include foundation-progress-bar;
+// @include foundation-progress-element;
+// @include foundation-progress-element;
+// @include foundation-meter-element;
+@include foundation-slider;
+@include foundation-sticky;
+@include foundation-reveal;
+@include foundation-switch;
+@include foundation-table;
+@include foundation-tabs;
+@include foundation-thumbnail;
+@include foundation-title-bar;
+@include foundation-tooltip;
+@include foundation-top-bar;
+@include foundation-visibility-classes;
+// @include foundation-float-classes;
+@include foundation-flex-classes;
+
+// @include foundation-prototype-classes;
+
+@include motion-ui-transitions;
+@include motion-ui-animations;
+@include foundation-flex-classes;
+@include foundation-flex-grid;
+
+body,html {
+	height:100%;
+}
+
+
+p,{
+	font-family: OpenSans, sans-serif;
+	color:  #60606e;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+
+h3 {
+	font-family: Montserrat, sans-serif;
+	color: #646472;
+	font-size: 20px;
+	font-weight: 700;
+	text-transform:uppercase;
+}
+.grid-x .paragraph{
+	text-transform:uppercase;
+	font-family: 'Montserrat', sans-serif;
+	color: #646472;
+	font-size: 30px;
+	font-weight: 700;
+	display: inline-block;
+	position: relative;
+	left:27%;
+	transform: translateX(-50%);
+}
+.grid-x .paragraph:before{
+	display: block;
+	content: "";
+	width: 3em;
+	height:.8em;
+	top:.8em;
+	background-color: #7beec7;
+	position: absolute;
+	z-index: -1;
+}
+.main-bg{
+	background: 
+	linear-gradient(
+	rgba(255,255,255, 0.5),
+	rgba(255,255,255, 0.5)
+	),
+	url("../img/Accor.Bluemountains-4.jpg") no-repeat;
+	background-size:cover;
+	height:80%;
+	background-attachment:fixed;	
+}
+.box{
+	text-align:right;
+}
+.box,.box-box{
+	padding-top:3em;
+}
+.breadcrumbs li a {
+	color: #646472;
+	font-size: 14px;
+	font-weight: 700;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+}
+.main-header{
+	text-transform:uppercase;
+	font-family: 'Montserrat', sans-serif;
+	color: #646472;
+	font-size: 36px;
+	font-weight: 700;
+}
+.small-6{
+	padding:2em 2em;
+}
+
+
+.checkbox {
+  vertical-align: top;
+  margin: 0 3px 0 0;
+  width: 17px;
+  height: 17px;
+}
+/* Это для всех браузеров, кроме совсем старых, которые не поддерживают
+селекторы с плюсом. Показываем, что label кликабелен. */
+.checkbox + label {
+  cursor: pointer;
+}
+
+/* Далее идет оформление чекбокса в современных браузерах, а также IE9 и выше.
+Благодаря тому, что старые браузеры не поддерживают селекторы :not и :checked,
+в них все нижеследующие стили не сработают. */
+
+/* Прячем оригинальный чекбокс. */
+.checkbox:not(checked) {
+  position: absolute;
+  opacity: 0;
+}
+.checkbox:not(checked) + label {
+  position: relative; /* будем позиционировать псевдочекбокс относительно label */
+  padding: 0 0 0 60px; /* оставляем слева от label место под псевдочекбокс */
+}
+
+.checkbox:not(checked) + label:before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 50px;
+  height: 26px;
+  border-radius: 13px;
+  background: #CDD1DA;
+  box-shadow: inset 0 2px 3px rgba(0,0,0,.2);
+}
+
+.checkbox:not(checked) + label:after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 10px;
+  background: #FFF;
+  box-shadow: 0 2px 5px rgba(0,0,0,.3);
+  transition: all .2s; /* анимация, чтобы чекбокс переключался плавно */
+}
+
+.checkbox:checked + label:before {
+ background-color:  #7beec7;
+}
+
+.checkbox:checked + label:after {
+  left: 26px;
+}
+
+.view {
+width: 554px;
+height: 364px;
+ margin: 10px;
+ float: left;
+ border: 10px solid #fff;
+ overflow: hidden;
+ position: relative;
+ text-align: center;
+ box-shadow: 1px 1px 2px #e6e6e6;
+ cursor: default;
+ background: #fff url("../img/Layer 5.jpg") no-repeat center center
+}
+.view .mask, .view .content {
+ width: 554px;
+height: 364px;
+ position: absolute;
+ overflow: hidden;
+ top: 0;
+ left: 0
+}
+.view img {
+ display: block;
+ position: relative
+}
+.view h2 {
+ text-transform: uppercase;
+ color: #fff;
+ text-align: center;
+ position: relative;
+ font-size: 17px;
+ padding: 10px;
+ background: rgba(0, 0, 0, 0.8);
+ margin: 20px 0 0 0
+}
+.view p {
+ font-family: Montserrat, sans-serif;
+ font-style: italic;
+ font-size: 12px;
+ position: relative;
+ color: #fff;
+ padding: 10px 20px 20px;
+ text-align: center
+}
+.view a.info {
+ display: inline-block;
+ text-decoration: none;
+ padding: 7px 14px;
+ background-color:  #7beec7;
+ color: #fff;
+ text-transform: uppercase;
+ box-shadow: 0 0 1px #000
+}
+.view a.info:hover {
+ box-shadow: 0 0 5px #000
+}
+
+.view-tenth img {
+ transform: scaleY(1);
+ transition: all 0.7s ease-in-out;
+}
+.view-tenth .mask {
+ background-color: rgba(255, 231, 179, 0.3);
+ transition: all 0.5s linear;
+ opacity: 0;
+}
+.view-tenth h2{
+ border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+ background: transparent;
+ margin: 20px 40px 0px 40px;
+ transform: scale(0);
+ color: #333;
+ transition: all 0.5s linear;
+ opacity: 0;
+}
+.view-tenth p {
+ color: #333;
+ opacity: 0;
+ transform: scale(0);
+ transition: all 0.5s linear;
+}
+.view-tenth a.info {
+ opacity: 0;
+ transform: scale(0);
+ transition: all 0.5s linear;
+}
+
+.view-tenth:hover img {
+ transform: scale(10);
+ opacity: 0;
+}
+.view-tenth:hover .mask {
+ opacity: 1;
+}
+.view-tenth:hover h2,
+.view-tenth:hover p,
+.view-tenth:hover a.info{
+ transform: scale(1);
+ opacity: 1;
+}
+.logotype img{
+	height:3em;
+}
+
+
+@keyframes animatedBackground {
+    0 {
+        background-position:0 0
+    }
+    100% {
+        background-position: 600px -100px /* анимируем свойство background-position */
+    }
+}
+/* Mozilla Firefox 5.0+ */
+@-moz-keyframes animatedBackground {
+    0 {
+        background-position:0 0
+    }
+    100% {
+        background-position: 600px -100px
+    }
+}
+/* Safari 4.0+, Chrome 4.0+ */
+@-webkit-keyframes animatedBackground {
+    0 {
+        background-position:0 0
+    }
+    100% {
+        background-position: 600px -100px
+    }
+}
+/* Opera 12.0+ */
+@-o-keyframes animatedBackground {
+    0 {
+        background-position:0 0
+    }
+    100% {
+        background-position: 600px -100px
+    }
+}
+/* не нужно использовать префикс -ms, так как свойства keyframes и animation поддерживаются с версии IE10 без префикса */
+#fon{
+	height:100%; /* задаем произвольную высоту и ширину блока */
+	width:100%;
+	background-image: url("../img/403704439-white-wallpapers.jpg");
+	animation: animatedBackground 60s linear infinite;
+	-moz-animation: animatedBackground 60s linear infinite;
+	-webkit-animation: animatedBackground 60s linear infinite;
+ 	-o-animation: animatedBackground 60s linear infinite;
+	/* так же, как и с @keyframes, префикс -ms тут ни к чему */
+}
+.card {
+	background-color:  #ffffff;
+	height: 490px;
+	border-top:5px solid #7beec7;
+	cursor:pointer;
+	padding:1em;
+		#big-button{
+			width: 135px;
+			height: 50px;
+			padding-top:1em;
+				&:hover{
+					color:#646472;
+					transition: 0.7s;
+				}
+		}
+		a {
+			background-color:  #7beec7;
+			width: 165px;
+			height: 30px;
+			font-family: 'Montserrat', sans-serif;
+			color:  #ffffff;
+			font-size: 14px;
+			font-weight: 700;
+			text-align: center;
+			padding-top:5px;
+				&:hover{
+					color:#646472;
+					transition: 0.7s;
+				}
+		}
+		&:hover,&:focus,&:active{
+			box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.25);
+			cursor:pointer;
+			transition: 0.7s;
+			-webkit-transform: scale(1.05);
+  			transform: scale(1.05);
+		}
+}
+.card-container{
+	display:flex;
+	justify-content: space-around;
+}
+
+
+.footer{
+	a {
+		background-color:  #ffffff;
+		width: 165px;
+		height: 49px;
+		font-family: 'Montserrat', sans-serif;
+		color:  #7beec7;
+		font-size: 14px;
+		font-weight: 700;
+		text-align: center;
+		display:inline-block;
+		padding-top:1em;
+			&:hover{
+					color:#646472;
+					transition: 0.7s;
+				}
+	}
+}
+.left-footer{
+	padding-top:5em;
+	padding-left:50px;
+}
+
+.contact{
+	background-color:  #ffffff;
+	width: 556px;
+	height: 230px;
+	display:flex;
+	padding:1em;
+	flex-direction:column;
+	margin:2em;
+}
+
+.input-group-field{
+	box-sizing: border-box;
+	background-color:  #ffffff;
+	width: 510px;
+	height: 50px;
+}
+.button2{
+	background-color:  #7beec7;
+	width: 135px;
+	height: 50px;
+}
+
+.footer-footer{
+	display:flex;
+	justify-content:space-around;
+	cursor:pointer;
+		& a:hover{
+			color:#000;
+			transition: 0.7s;
+		}
+}
+
+.footer-footer-right p{
+	display:flex;
+	flex-direction:column;
+	display:inline-block;
+	padding-left:100px;
+}
+
+.footer-footer-right .font-awesome{
+	display:flex;
+	width:27em;
+	height:3em;
+	justify-content:space-around;
+	padding-left:6em;
+	cursor:pointer;
+}
+
+.footer-footer-right .font-awesome .fab:hover{
+	opacity:0.5;
+}
+.fab{
+	display:inline-block;
+	cursor:pointer;
+}
+
+
+.svg-menu-toggle {
+	fill:#000;
+	pointer-events:all; //needs to be there so the hover works
+	cursor:pointer;
+	.bar {
+		-webkit-transform:rotate(0) translateY(0) translateX(0);
+		transform:rotate(0) translateY(0) translateX(0);
+		opacity:1;
+		-webkit-transform-origin: 20px 10px;
+		transform-origin: 20px 10px;
+		-webkit-transition: -webkit-transform 0.4s ease-in-out, opacity 0.2s ease-in-out;
+	    transition: transform 0.4s ease-in-out, opacity 0.2s ease-in-out;
+
+	}
+  .bar:nth-of-type(1) {
+    -webkit-transform-origin: 20px 10px;
+		transform-origin: 20px 10px;
+  }
+   .bar:nth-of-type(3) {
+    -webkit-transform-origin: 20px 20px;
+		transform-origin: 20px 20px;
+   }
+}
+
+.svg-menu-toggle:hover {
+    .bar:nth-of-type(1) {		
+		-webkit-transform:rotate(-45deg) translateY(0) translateX(0);
+		transform:rotate(-45deg) translateY(0) translateX(0);
+    }
+    .bar:nth-of-type(2) {
+		opacity:0;
+    }
+    .bar:nth-of-type(3) {
+    	-webkit-transform:rotate(45deg) translateY(0em) translateX(0em);
+		transform:rotate(45deg) translateY(0em) translateX(0em);
+    }
+}
+
+
+.nice-link{
+	 display: inline-block;
+   	position: relative;
+   text-decoration: none;
+   background:inherit;
+}
+
+.nice-link::before{
+   display: block;
+   position: absolute;
+   content: "";
+   height: 2px;
+   width: 0;
+   background-color:#7BEEC7;
+   transition: width .5s ease-in-out, left .5s ease-in-out;
+   left: 50%;
+   bottom: 0;
+}
+
+.nice-link::after{
+   display: block;
+   position: absolute;
+   content: "";
+   height: 2px;
+   width: 0;
+   background-color:#7BEEC7;
+   transition: width .5s ease-in-out;
+   left: 50%;
+   bottom: 0;
+}
+
+.nice-link:hover::before{
+   width: 50%;
+   left: 0;
+}
+.nice-link:hover::after{
+   width: 50%;
+}
